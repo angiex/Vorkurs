@@ -4,25 +4,25 @@ public class KeineEins {
 
 	public static void main(String[] args) {
 
-		byte throwDice;
-		int count = 0;
+		int throwDice;
 		int[] dice = new int[0];
+		int[] newDice = new int[dice.length + 1];
 
 		do {
-			throwDice = (byte) (Math.round((Math.random() * 5)) + 1);
+			throwDice = (int) (Math.round((Math.random() * 5)) + 1);
 
-			count++;
-			dice[count - 1] = throwDice;
-
-			int[] prevDice = new int[dice.length + 1];
-
-			// copy content of dice into prev dice
+			// copy content of dice
 			for (int i = 0; i < dice.length; i++) {
-				prevDice[i] = dice[i];
+				newDice[i] = dice[i];
 			}
 
-			// reset dice
-			dice = new int[count];
+			newDice[newDice.length - 1] = throwDice;
+
+			dice = newDice;
+
+			for (int i = 0; i < dice.length; i++) {
+				System.out.println(dice[i]);
+			}
 
 		} while (throwDice != 1);
 
