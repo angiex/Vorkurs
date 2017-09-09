@@ -20,11 +20,11 @@ public class KeineEins {
 
 			dice = newDice;
 
-			for (int i = 0; i < dice.length; i++) {
-				System.out.println(dice[i]);
-			}
-
 		} while (throwDice != 1);
+
+		for (int i = 0; i < dice.length; i++) {
+			System.out.println(dice[i]);
+		}
 
 	}
 
