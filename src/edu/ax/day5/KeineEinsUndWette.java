@@ -9,7 +9,6 @@ public class KeineEinsUndWette {
 		boolean win;
 		long games = 0;
 		double winCount = 0;
-		double lossCount = 0;
 		double result;
 
 		System.out.println("How many times do you want to play?");
@@ -27,11 +26,11 @@ public class KeineEinsUndWette {
 				winCount++;
 			} else {
 				System.out.println("Sorry, you lost 1€.");
-				lossCount++;
+				winCount--;
 			}
 		}
 
-		result = ((winCount - lossCount) / games);
+		result = winCount / games;
 
 		System.out.println("On average your balance has changed by " + result);
 
