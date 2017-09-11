@@ -13,8 +13,9 @@ public class RaumvektorenImFeld {
 		byte user;
 
 		do {
-			System.out.println(
-					"1 to add, 2 to delete all, 3 to print, 4 to delete vector, 5 to ?????, 6 to create new random vector, 0 to stop program");
+			System.out
+					.println("1 to add, 2 to delete all, 3 to print, 4 to delete vector, 5 to calculate centroid of all"
+							+ "vectors in array, 6 to create new random vectors, 0 to stop program.");
 
 			user = input.nextByte();
 
