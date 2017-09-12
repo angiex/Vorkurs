@@ -2,71 +2,71 @@ package edu.ax.day7;
 
 public class RationaleZahl {
 
-	private int num, denum;
-	private int shortenedNum, shortenedDenum;
+	private int num, denom;
+	private int shortenedNum, shortenedDenom;
 
 	public RationaleZahl() {
 
 	}
 
-	public RationaleZahl(int num, int denum) {
+	public RationaleZahl(int num, int denom) {
 		setNum(num);
-		setDenum(denum);
+		setDenom(denom);
 	}
 
 	public int getNum() {
 		return num;
 	}
 
-	public int getDenum() {
-		return denum;
+	public int getDenom() {
+		return denom;
 	}
 
 	public void setNum(int num) {
 		this.num = num;
 	}
 
-	public void setDenum(int denum) {
-		if (denum == 0) {
+	public void setDenom(int denom) {
+		if (denom == 0) {
 			throw new IllegalArgumentException("You cannot divide by 0.");
 		}
-		this.denum = denum;
+		this.denom = denom;
 	}
 
 	public RationaleZahl multiplication(RationaleZahl otherNumber) {
 		int newNum = this.num * otherNumber.num;
-		int newDenum = this.denum * otherNumber.denum;
+		int newDenom = this.denom * otherNumber.denom;
 
-		RationaleZahl multiplied = new RationaleZahl(newNum, newDenum);
+		RationaleZahl multiplied = new RationaleZahl(newNum, newDenom);
 		multiplied.shorten();
 		return multiplied;
 	}
 
 	// TO DO: Methode zur Addition
 	public RationaleZahl addition(RationaleZahl otherNumber) {
-		int newNum = (this.num * otherNumber.denum) + (otherNumber.num * this.denum);
-		int newDenum = this.denum * otherNumber.denum;
+		int newNum = (this.num * otherNumber.denom) + (otherNumber.num * this.denom);
+		int newDenom = this.denom * otherNumber.denom;
 
-		RationaleZahl added = new RationaleZahl(newNum, newDenum);
+		RationaleZahl added = new RationaleZahl(newNum, newDenom);
 		added.shorten();
 		return added;
 	}
 
 	private void shorten() {
 		shortenedNum = num / findGGT();
-		shortenedDenum = denum / findGGT();
+		shortenedDenom = denom / findGGT();
 	}
 
 	public RationaleZahl getShortenedNumber() {
 		shorten();
-		RationaleZahl shortened = new RationaleZahl(shortenedNum, shortenedDenum);
+		RationaleZahl shortened = new RationaleZahl(shortenedNum, shortenedDenom);
 		return shortened;
 	}
 
 	public int findGGT() {
 		// Euclidean Algorithm;
 		int z = num;
-		int ggT = denum;
+		int ggT = denom;
 
 		while (z % ggT != 0) {
 			int mod = z % ggT;
@@ -78,7 +78,7 @@ public class RationaleZahl {
 	}
 
 	public String toString() {
-		return num + "/" + denum;
+		return num + "/" + denom;
 	}
 
 }
