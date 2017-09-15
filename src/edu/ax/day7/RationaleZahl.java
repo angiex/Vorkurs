@@ -1,6 +1,6 @@
 package edu.ax.day7;
 
-public class RationaleZahl {
+public class RationaleZahl extends AusgabeBasis {
 
 	private int num, denom;
 	private int shortenedNum, shortenedDenom;
@@ -79,6 +79,11 @@ public class RationaleZahl {
 
 	public String toString() {
 		return num + "/" + denom;
+	}
+
+	@Override
+	public void print() {
+		System.out.println("I describe rational numbers.");
 	}
 
 }

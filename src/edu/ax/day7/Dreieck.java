@@ -1,6 +1,6 @@
 package edu.ax.day7;
 
-public class Dreieck {
+public class Dreieck extends AusgabeBasis {
 
 	private Vektor v1;
 	private Vektor v2;
@@ -10,6 +10,12 @@ public class Dreieck {
 		this.v1 = v1;
 		this.v2 = v2;
 		this.v3 = v3;
+	}
+
+	public Dreieck() {
+		this.v1 = new Vektor(0, 0);
+		this.v2 = new Vektor(0, 0);
+		this.v3 = new Vektor(0, 0);
 	}
 
 	public void pointReflect() {
@@ -56,6 +62,11 @@ public class Dreieck {
 
 	public String toString() {
 		return "(" + v1 + ", " + v2 + ", " + v3 + ")";
+	}
+
+	@Override
+	public void print() {
+		System.out.println("I describe triangles.");
 	}
 
 }

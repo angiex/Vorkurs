@@ -1,6 +1,6 @@
 package edu.ax.day7;
 
-public class Vektor {
+public class Vektor extends AusgabeBasis {
 
 	private double x, y;
 
@@ -55,6 +55,11 @@ public class Vektor {
 		double prevY = y;
 		x = (prevX * Math.cos(alpha)) - (prevY * Math.sin(alpha));
 		y = (prevX * Math.sin(alpha)) + (prevY * Math.cos(alpha));
+	}
+
+	@Override
+	public void print() {
+		System.out.println("I describe vectors.");
 	}
 
 }
